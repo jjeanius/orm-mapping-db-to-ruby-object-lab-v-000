@@ -88,19 +88,16 @@ class Student
         SELECT * FROM students
         WHERE grade = ?
         SQL
+        
         DB[:conn].execute(sql, student)
-      #  DB[:conn].execute(sql).collect do |row|
-      #    self.new_from_db(row)
     end
-
-
 
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade)
       VALUES (?, ?)
     SQL
-
+    
     DB[:conn].execute(sql, self.name, self.grade)
   end
 
@@ -118,6 +115,7 @@ class Student
 
   def self.drop_table
     sql = "DROP TABLE IF EXISTS students"
+    
     DB[:conn].execute(sql)
   end
 
