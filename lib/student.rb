@@ -83,6 +83,17 @@ class Student
       end
 
 
+      def self.all_students_in_grade_X
+        sql = <<-SQL
+        SELECT * FROM students
+        WHERE student.grade = x
+        SQL
+
+        db[:conn].execute(sql).collect do |ro|
+          self.new_from_db(row)
+        end
+      end
+
 
 
   def save
