@@ -86,7 +86,7 @@ class Student
       def self.all_students_in_grade_X(student)
         sql = <<-SQL
         SELECT * FROM students
-        WHERE students.grade = 
+        WHERE students.grade =
         LIMIT X
         SQL
 
