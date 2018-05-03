@@ -86,7 +86,7 @@ class Student
       def self.all_students_in_grade_X(student)
         sql = <<-SQL
         SELECT * FROM students
-        WHERE grade.size = ?
+        WHERE grade X = ?
         SQL
       #  DB[:conn].execute(sql, student)
         DB[:conn].execute(sql).collect do |row|
