@@ -81,9 +81,9 @@ class Student
           self.new_frin db(row)
         end
       end
-        
 
-      
+
+
 
   def save
     sql = <<-SQL
